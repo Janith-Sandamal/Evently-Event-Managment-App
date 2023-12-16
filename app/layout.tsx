@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import { Poppins as NextPoppins } from 'next/font/google'
 import './globals.css'
 
-const Poppins = Poppins({ 
+const LocalPoppins = NextPoppins({ 
   subsets: ['latin'],
   weight: ['400','500','600','700'],
   variable: '--font-poppins',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Evently',
   description: "Evently is a World's best platform for Event Managment",
   icons: {
-    icon:
+    icon: '/public/assets/images/logo.svg'
   }  
 }
 
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Poppins.variable}>{children}</body>
+      <body className={LocalPoppins.variable}>{children}</body>
     </html>
   )
 }
