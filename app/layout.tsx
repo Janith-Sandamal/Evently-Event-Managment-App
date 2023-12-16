@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Poppins as NextPoppins } from 'next/font/google'
 
-
 import './globals.css'
+import Header from '@/components/shared/Header'
+import Footer from '@/components/shared/Footer'
 
 const LocalPoppins = NextPoppins({ 
   subsets: ['latin'],
@@ -25,10 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/assets/images/logo.svg" />
-      </head>
-      <body className={LocalPoppins.variable}>{children}</body>
+    <Header />
+    <body className={LocalPoppins.variable}>{children}</body>
+    <Footer />
     </html>
   )
 }
